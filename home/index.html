@@ -4,9 +4,107 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
+  <div class="wrapper">
+    <header class="header">
+      <div class="header-logo">BT</div>
+      <ul class="header-list">
+        <li class="header-item">
+          <a href="#" class="header-link">
+            Bài tập
+          </a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">
+            Trạng thái
+          </a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">
+            Lịch sử
+          </a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">
+            Bảng xếp hạng
+          </a>
+        </li>
+        <li class="header-item">
+          <a href="#" class="header-link">
+            Hướng dẫn
+          </a>
+        </li>
+      </ul>
+      <i class="fa-solid fa-bars toggle"></i>
+    </header>
+    <main>
+      <section class="container">
+        <div class="container-search">
+          <div class="heading">Bài tập</div>
+          <div class="box-search">
+            <input type="text" class="search" placeholder="Tìm theo mã, tiêu đề">
+            <select class="filter">
+              <option value="1">Cáu trúc dữ liệu và giải thuật</option>
+            </select>
+          </div>
+        </div>
+        <div class="container-main" style="overflow-x: auto;">
+          <table class="table">
+            <thead>
+              <tr class="table-title">
+                <th>STT</th>
+                <th>Mã</th>
+                <th>Tiêu đề</th>
+                <th>Nhóm</th>
+                <th>
+                  <span>Chủ đề con</span>
+                  <i class="fa-solid fa-filter icon--filter"></i>
+                </th>
+                <th>Độ khó</th>
+                <th>Làm đúng</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-item">
+                <td>
+                  <i class="fa-solid fa-code table-icon--code"></i>
+                  <span>1</span>
+                </td>
+                <td>dsa02023</td>
+                <td>đặt tên</td>
+                <td>các mô hình thuật toán</td>
+                <td>Quay lui-Nhánh cận</td>
+                <td>1</td>
+                <td>33</td>
+              </tr>
+              <tr class="table-item">
+                <td>
+                  <i class="fa-solid fa-code table-icon--code"></i>
+                  <span>1</span>
+                </td>
+                <td>dsa02023</td>
+                <td>đặt tên</td>
+                <td>các mô hình thuật toán</td>
+                <td>Quay lui-Nhánh cận</td>
+                <td>1</td>
+                <td>33</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
+<script src="./main.js"></script>
 </html>

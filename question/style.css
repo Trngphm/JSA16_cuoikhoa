@@ -1,0 +1,107 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  padding: 10px 50px;
+}
+
+.main {
+  display:flex;
+  justify-content: space-between;
+}
+
+.question {
+  max-width: 750px;
+  padding: 0 15px;
+  margin: 50px 0;
+}
+
+.code {
+  width: 100%;
+  height: 100%;
+  background-color: #dcdcdc;
+  min-width: 50%;
+  height: auto;
+  border-radius: 10px;
+  padding-top: 20px;
+  overflow: hidden;
+}
+
+.code-header {
+  padding: 10px;
+  position: relative;
+}
+
+.code-header span {
+  position: absolute;
+  top: -50%;
+  right: 20px;
+}
+
+.code-header .language {
+  color: red;
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.editor {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  font-family: 'Source Code Pro', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  min-height: 500px;
+  max-height: 560px;
+  letter-spacing: normal;
+  line-height: 20px;
+  padding: 20px;
+  tab-size: 4;
+}
+
+
+
+
+.btn-grad {background-image: linear-gradient(45deg, #ac3125, #c76157, #dd8f8a, #edbebc, #f8eded);}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; 
+   opacity: 0.8;
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+.button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  float: right;
+  clear: both;
+}
+
+
+@media screen and (max-width: 1023.98px) {
+  .container {
+    margin-bottom: 20px;
+  }
+  .main {
+    display: block;
+  }
+  .editor {
+    min-height: 200px;
+    max-height: 350px;
+  }
+}
