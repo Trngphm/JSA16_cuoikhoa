@@ -1,3 +1,4 @@
+
 const zodiacData = [
   {
     name: "Aries",
@@ -65,6 +66,7 @@ const baseURL = "https://sameer-kumar-aztro-v1.p.rapidapi.com/";
 // select
 const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
+
 
 // render
 function renderList() {
@@ -136,7 +138,6 @@ function api(url) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       renderProperty(data)
     })
     .catch((err) => {
@@ -164,7 +165,6 @@ astroList.forEach((astroItem) => {
         dayActive.classList.remove("active")
         day = item.innerText
         let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
-        console.log(url);
         api(url)
       };
     });
