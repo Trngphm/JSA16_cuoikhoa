@@ -1,0 +1,298 @@
+/* general */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Quicksand:wght@200;300;400;500;600&display=swap');
+
+body {
+  background-image: url("../assets/image/bg.jpg");
+  font-family: 'Quicksand', sans-serif;
+  background-size: cover;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* main */
+
+
+.astro-main {
+  z-index: 10;
+  /* padding: 0 50px; */
+}
+
+.astro-intro {
+  background: linear-gradient(112.8deg, #43498C 11.87%, #31345E 96.1%);
+  padding: 20px 85px;
+}
+
+.intro-logo {
+  text-transform: uppercase;
+  color: #F1B76E;
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+.intro-main {
+  display:flex;
+  align-items: center;
+  gap: 0 100px;
+  color: white;
+}
+
+.intro-image {
+  width: 50%;
+}
+
+.intro-header {
+  font-family: PT Serif;
+  font-size: 100px;
+  color: #F1B76E;
+}
+
+.intro-header span {
+  color: white;
+}
+
+.intro-desc {
+  font-size: 32px;
+  font-weight: 400;
+  max-width: 279px;
+}
+
+.astro-list {
+  margin-bottom: 20px;
+}
+
+.astro-item {
+  width: 300px;
+  padding: 0 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.astro-item img {
+  margin-bottom: 10px;
+}
+
+.astro-name {
+  font-size: 35px;
+  font-weight: 600;
+  font-family: 'Dancing Script', cursive;
+}
+
+.astro-day {
+  font-size: 25px;
+}
+
+@media screen and (max-width: 1023.98px) {
+  .astro-image {
+    width: 100%;
+  }
+  .astro-list {
+    width: 100%;
+  }
+  .astro-item {
+    padding-left: 0;
+  }
+  .astro-intro {
+    padding: 30px 20px;
+  }
+  .intro-main {
+    gap: 0 20px;
+  }
+  .intro-header {
+    font-size: 85px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .astro-list {
+    display: block;
+  }
+  .intro-main {
+    display: block;
+  }
+  .intro-image {
+    width: 100%;
+  }
+  .intro-header {
+    font-size: 75px;
+  }
+  .intro-desc {
+    font-size: 26px;
+  }
+}
+
+/* page 2 */
+.astro-inform {
+  padding-top: 30px;
+  position: fixed; 
+  width: 100%;
+  height: 100vh;
+  background-image: url("../assets/image/bg.jpg");
+  background-size: cover;
+  z-index: 1000;
+}
+
+.inform-header {
+  margin-bottom: 50px;
+}
+
+
+.inform-day {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.day-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.25em;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  opacity: .6;
+}
+
+.day-title.active {
+  font-size: 3em;
+  opacity: 1;
+}
+
+.inform-name {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-size: 35px;
+}
+
+.inform-icon {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.inform-content {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.property-list {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.property-item {
+  margin-left: 35px;
+  background-color: white;
+  min-height: 300px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  box-shadow: 15px 15px 40px rgba(255, 255, 255, 30%);
+}
+
+
+.property-title {
+  font-family: 'Dancing Script', cursive;
+  position: relative;
+  text-transform: uppercase;
+  color: #DA1212;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.property-title::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background-color: #1c2448;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.property-text {
+  position: relative;
+  color: #1c2448;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #1c2448;
+}
+
+
+.property-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+
+@media screen and (min-width: 1024px) {
+  .inform-day {
+    gap: 0 400px;
+  }
+}
+
+
+@media screen and (max-width: 1023.98px) {
+   .inform-day {
+     justify-content: space-between;
+   }
+  .property-item {
+  width: calc(100% / 3 - 15px);
+  }
+  .inform-close {
+    font-size: 25px;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .day-title.active {
+    font-size: 2.25em;
+  }
+  .day-title {
+    font-size: 1.75em;
+  }
+  .inform-header {
+    margin-bottom: 20px;
+  }
+  .property-item {
+     width: 100%;
+   }
+}
+
+
+
+
+
+ 
+
+
+
+

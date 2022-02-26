@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>submit code</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-</body>
-<script src="./app.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astrology</title>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="astro-main">
+        <div class="astro-intro">
+          <div class="intro-logo">astra</div>
+          <div class="intro-main">
+            <div class="intro-image">
+              <img srcset="./assets/image/astro.png 2x" alt="astro"/>
+            </div>
+            <div class="intro-content">
+              <div class="intro-header">
+                Astra<span>portal</span>
+              </div>
+              <div class="intro-desc">
+                Science and magic of the stars.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper astro-list">
+          <div class="swiper-wrapper"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <div class="astro-inform">
+        <div class="inform-header">
+          <div class="inform-day">
+            <div class="day-title">Yesterday</div>
+            <div class="day-title active">Today</div>
+            <div class="day-title">Tomorrow</div>
+          </div>
+          <div class="inform-header--main"></div>
+        </div>
+        <div class="property-list swiper">
+          <div class="swiper-wrapper"></div>
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./swiper.js"></script>
+    <script src="./app.js"></script>
+  </body>
 </html>
