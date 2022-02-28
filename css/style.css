@@ -55,6 +55,7 @@ img {
 
 .intro-header {
   font-family: 'PT Serif', serif;
+  font-family: PT serif;
   font-size: 100px;
   color: #F1B76E;
 }
@@ -130,7 +131,7 @@ img {
     width: 100%;
   }
   .intro-header {
-    font-size: 75px;
+    font-size: 65px;
   }
   .intro-desc {
     font-size: 26px;
