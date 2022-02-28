@@ -209,8 +209,8 @@ astroInform.onmousedown = handleDown;
 astroInform.onmousemove = handleMove;
 astroInform.onmouseup = handleUp;
 // Mobile
-// astroInform.onpointerdown = handleDown;
-// window.onpointermove = handleMove;
-// window.onpointerup = handleUp;
+astroInform.onpointerdown = handleDown;
+astroInform.onpointermove = handleMove;
+astroInform.onpointerup = handleUp;
 
 // ------------------
