@@ -66,7 +66,7 @@ const baseURL = "https://sameer-kumar-aztro-v1.p.rapidapi.com/";
 // select
 const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
-
+const loader = select("lottie-player")
 
 // render
 function renderList() {
@@ -139,6 +139,8 @@ function api(url) {
     .then((res) => res.json())
     .then((data) => {
       renderProperty(data)
+      loader.style.display = "none"
+
     })
     .catch((err) => {
       console.error(err);
@@ -214,3 +216,18 @@ astroInform.onpointermove = handleMove;
 astroInform.onpointerup = handleUp;
 
 // ------------------
+
+// destination of page
+const dot = selectAll(".dot")
+
+function scrollFunction() {
+  if (document.body.scrollTop > innerHeight - 500 || document.documentElement.scrollTop > innerHeight - 500) {
+    dot[0].style.background = "rgba(255, 255, 255, .4)"
+    dot[1].style.background = "rgba(255, 255, 255, 1)"
+  } else {
+    dot[1].style.background = "rgba(255, 255, 255, .4)"
+    dot[0].style.background = "rgba(255, 255, 255, 1)"
+  }
+}
+
+window.onscroll = scrollFunction

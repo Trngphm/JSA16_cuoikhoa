@@ -2,10 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Quicksand:wght@200;300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
 
+body,html{
+  touch-action :none;
+} 
+
 body {
   background-image: url("../assets/image/bg.jpg");
   font-family: 'Quicksand', sans-serif;
   background-size: cover;
+  min-height: 100vh;
 }
 
 img {
@@ -24,7 +29,8 @@ img {
 
 .astro-main {
   z-index: 10;
-  min-height: 100vh;
+  height: 100vh;
+  margin-bottom: 50px;
 }
 
 .astro-intro {
@@ -55,7 +61,6 @@ img {
 
 .intro-header {
   font-family: 'PT Serif', serif;
-  font-family: PT serif;
   font-size: 100px;
   color: #F1B76E;
 }
@@ -116,7 +121,10 @@ img {
     gap: 0 20px;
   }
   .intro-header {
-    font-size: 85px;
+    font-size: 80px;
+  }
+  .intro-desc {
+    font-size: 28px;
   }
 }
 
@@ -205,9 +213,10 @@ img {
 }
 
 .property-item {
+  width:350px !important;
+  aspect-ratio: 4/3;
   margin-left: 35px;
   background-color: white;
-  min-height: 300px;
   border-radius: 5px;
   padding: 5px 10px;
   margin-bottom: 20px;
@@ -295,55 +304,50 @@ img {
    }
 }
 
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #242f3f;
+
+
+
+
+
+.main{
+  height:100vh;
   display:flex;
-  justify-content: center;
   align-items: center;
 }
-.loader {
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  position: relative;
-  border: 4px solid #Fff;
-  animation: loader 2s infinite ease;
-}
-.loader-inner {
-  vertical-align: top;
-  display: inline-block;
-  width: 100%;
-  background-color: #fff;
-  animation: loader-inner 2s infinite ease-in;
-}
-
-@keyframes loader {
-  0% { transform: rotate(0deg);}
-  25% { transform: rotate(180deg);}
-  50% { transform: rotate(180deg);}
-  75% { transform: rotate(360deg);}
-  100% { transform: rotate(360deg);}
-}
-
-@keyframes loader-inner {
-  0% { height: 0%;}
-  25% { height: 0%;}
-  50% { height: 100%;}
-  75% { height: 100%;}
-  100% { height: 0%;}
-}
-
-
-
-
-
  
+.page{
+  position: fixed;
+  right:20px;
+  top:50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+.dot{
+  width:15px;
+  aspect-ratio: 1/1;
+  background: rgba(255, 255, 255,.4);
+  border-radius: 50%;
+  margin-bottom: 10px;
+  z-index: 10;
+}
+.loader{
+  width:100%;
+  height: 100%;
+  background: white;
+  position:absolute;
+}
 
+lottie-player react {
+  fill: rgba(255, 255, 255, 0);
+}
+
+.astro-list .swiper-button-prev,
+.astro-list .swiper-button-next {
+  transform: translateY(-50%);
+  margin-top: calc(0px - (var(--swiper-navigation-size))/1.1);
+}
 
 
 
