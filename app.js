@@ -1,4 +1,3 @@
-
 const zodiacData = [
   {
     name: "Aries",
@@ -41,7 +40,7 @@ const zodiacData = [
     img: "./assets/image/img8.jpg",
   },
   {
-    name: "Sagitarius",
+    name: "Sagittarius",
     date: "23/11 - 20/12",
     img: "./assets/image/img9.jpg",
   },
@@ -66,7 +65,7 @@ const baseURL = "https://sameer-kumar-aztro-v1.p.rapidapi.com/";
 // select
 const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
-const loader = select("lottie-player")
+const loader = select("lottie-player");
 
 // render
 function renderList() {
@@ -91,12 +90,15 @@ const astroInform = select(".astro-inform");
 const astroMain = select(".astro-main");
 let isDrag = false;
 let pos, pos_m;
+const body = select("body");
+
 
 const openModal = () => {
   astroInform.style.top = 0;
+  body.style.overflow = "hidden";
 };
 const propertyList = select(".property-list .swiper-wrapper");
-
+const cardTemplate = select(".template");
 
 // * render page2
 function renderPage2(img, name, day) {
@@ -109,17 +111,16 @@ function renderPage2(img, name, day) {
       <div class="inform-date--zodiac">${day}</div>
     </div>
         `;
-  
 }
 
 function renderProperty(data) {
-  propertyList.innerHTML = ''
+  propertyList.innerHTML = "";
   for (i in data) {
     if (i != "date_range" && i != "current_date") {
       propertyList.innerHTML += `
           <div class="property-${i} property-item swiper-slide">
-            <h3 class="property-title">${i.replace("_", " ")}</h3>
-            <p class="property-text">${data[i]}</p>
+            <h3 class="property-title" data-title>${i.replace("_", " ")}</h3>
+            <p class="property-text" data-body>${data[i]}</p>
           </div>
         `;
     }
@@ -127,6 +128,22 @@ function renderProperty(data) {
 }
 
 // --------------------
+
+// * skeleton loading
+function skeletonLoading() {
+  propertyList.innerHTML = ""
+  for (let i = 0; i< 5; i++) {
+    propertyList.innerHTML += 
+  `
+    <div class="property-item swiper-slide">
+      <h3 class="skeleton-text skeleton" data-title></h3>
+      <p class="property-text skeleton-text skeleton" data-body></p>
+      <p class="property-text skeleton-text skeleton" data-body></p>
+    </div>
+  `
+  }
+}
+
 // * api
 function api(url) {
   fetch(url, {
@@ -138,36 +155,40 @@ function api(url) {
   })
     .then((res) => res.json())
     .then((data) => {
-      renderProperty(data)
-      loader.style.display = "none"
-
+      renderProperty(data);
+      loader.style.display = "none";
     })
     .catch((err) => {
       console.error(err);
     });
 }
 
-
 astroList.forEach((astroItem) => {
   astroItem.onclick = () => {
     let day = "today";
+    let dayActive = select(".active");
     let img = astroItem.children[0].srcset;
     let informName = astroItem.children[1].innerText;
     let informDay = astroItem.children[2].innerText;
     let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
-
     renderPage2(img, informName, informDay);
-    api(url)
+    if (loader.style.display == "none") {
+      skeletonLoading()
+    }
+    api(url);
     // day
     const dayTitle = selectAll(".day-title");
+    dayActive.classList.remove("active")
+    dayTitle[1].classList.add("active")
     dayTitle.forEach((item) => {
       item.onclick = () => {
-        dayActive = select(".active")
-        item.classList.add("active")
-        dayActive.classList.remove("active")
-        day = item.innerText
+        dayActive = select(".active");
+        dayActive.classList.remove("active");
+        item.classList.add("active");
+        day = item.innerText;
         let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
-        api(url)
+        skeletonLoading()
+        api(url);
       };
     });
     openModal();
@@ -218,16 +239,20 @@ astroInform.onpointerup = handleUp;
 // ------------------
 
 // destination of page
-const dot = selectAll(".dot")
+const dot = selectAll(".dot");
 
 function scrollFunction() {
-  if (document.body.scrollTop > innerHeight - 500 || document.documentElement.scrollTop > innerHeight - 500) {
-    dot[0].style.background = "rgba(255, 255, 255, .4)"
-    dot[1].style.background = "rgba(255, 255, 255, 1)"
+  if (
+    document.body.scrollTop > innerHeight - 500 ||
+    document.documentElement.scrollTop > innerHeight - 500
+  ) {
+    dot[0].style.background = "rgba(255, 255, 255, .4)";
+    dot[1].style.background = "rgba(255, 255, 255, 1)";
   } else {
-    dot[1].style.background = "rgba(255, 255, 255, .4)"
-    dot[0].style.background = "rgba(255, 255, 255, 1)"
+    dot[1].style.background = "rgba(255, 255, 255, .4)";
+    dot[0].style.background = "rgba(255, 255, 255, 1)";
   }
 }
+window.onscroll = scrollFunction;
 
-window.onscroll = scrollFunction
+// new WOW().init();

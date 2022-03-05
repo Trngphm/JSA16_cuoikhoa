@@ -18,6 +18,8 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
+    <!-- animate load web -->
+    <!-- <link rel="stylesheet" href="css/animate.css"> -->
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
@@ -64,7 +66,19 @@
         </div>
 
         <div class="property-list swiper">
-          <div class="swiper-wrapper"></div>
+          <div class="swiper-wrapper">
+            <!-- <div class="property-item swiper-slide">
+              <h3 class="skeleton-text skeleton" data-title></h3>
+              <p class="property-text skeleton-text skeleton" data-body></p>
+              <p class="property-text skeleton-text skeleton" data-body></p>
+            </div> -->
+          </div>
+          <template class="template">
+            <div class="property-item swiper-slide">
+              <h3 class="property-title skeleton-text skeleton" data-title></h3>
+              <p class="property-text skeleton-text skeleton" data-body></p>
+            </div>
+          </template>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
           <lottie-player
@@ -81,8 +95,8 @@
     </div>
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- <script src="js/wow.min.js"></script> -->
     <script src="./swiper.js"></script>
     <script src="./app.js"></script>
   </body>
