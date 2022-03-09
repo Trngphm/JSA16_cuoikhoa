@@ -1,14 +1,15 @@
 /* general */
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Quicksand:wght@200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600&family=Quicksand:wght@200;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap");
 
-body,html{
-  touch-action :none;
-} 
+body,
+html {
+  touch-action: none;
+}
 
 body {
   background-image: url("../assets/image/bg.jpg");
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   background-size: cover;
   min-height: 100vh;
 }
@@ -26,7 +27,6 @@ img {
 
 /* main */
 
-
 .astro-main {
   z-index: 10;
   height: 100vh;
@@ -34,22 +34,22 @@ img {
 }
 
 .astro-intro {
-  background: linear-gradient(112.8deg, #43498C 11.87%, #31345E 96.1%);
+  height: 100%;
+  background: linear-gradient(112.8deg, #43498c 11.87%, #31345e 96.1%);
   padding: 20px 85px;
   margin-bottom: 50px;
 }
 
-
 .intro-logo {
   text-transform: uppercase;
-  color: #F1B76E;
+  color: #f1b76e;
   font-size: 30px;
   font-weight: 600;
   margin-left: 30px;
 }
 
 .intro-main {
-  display:flex;
+  display: flex;
   align-items: center;
   gap: 0 100px;
   color: white;
@@ -57,12 +57,15 @@ img {
 
 .intro-image {
   width: 50%;
+  object-fit: cover;
+  position: relative;
+  border-radius: 50%;
 }
 
 .intro-header {
-  font-family: 'PT Serif', serif;
+  font-family: "PT Serif", serif;
   font-size: 100px;
-  color: #F1B76E;
+  color: #f1b76e;
 }
 
 .intro-header span {
@@ -98,7 +101,7 @@ img {
 .astro-name {
   font-size: 35px;
   font-weight: 600;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
 }
 
 .astro-day {
@@ -113,10 +116,11 @@ img {
     margin-bottom: 0;
   }
   .astro-intro {
-    padding: 50px;
+    padding: 20px 50px;
   }
   .intro-image {
     width: 100%;
+    margin: 0 auto;
   }
   .astro-list {
     width: 100%;
@@ -126,6 +130,15 @@ img {
   }
   .intro-desc {
     font-size: 28px;
+  }
+}
+
+@media screen and (max-height: 815px) {
+  .intro-image {
+    width: 50%;
+  }
+  .intro-header {
+    font-size: 80px;
   }
 }
 
@@ -147,7 +160,7 @@ img {
 /* page 2 */
 .astro-inform {
   padding-top: 30px;
-  position: fixed; 
+  position: fixed;
   width: 100%;
   height: 100vh;
   background-image: url("../assets/image/bg.jpg");
@@ -162,14 +175,12 @@ img {
   }
 }
 
-
 .inform-header {
   margin-bottom: 50px;
 }
 
-
 .inform-day {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -177,12 +188,12 @@ img {
 }
 
 .day-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 2.25em;
   font-weight: 600;
   color: white;
   cursor: pointer;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .day-title.active {
@@ -191,7 +202,7 @@ img {
 }
 
 .inform-name {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-weight: 600;
   font-size: 35px;
 }
@@ -211,7 +222,7 @@ img {
 }
 
 .property-list {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
@@ -219,7 +230,7 @@ img {
 }
 
 .property-item {
-  width:350px !important;
+  width: 350px !important;
   aspect-ratio: 4/3;
   margin-left: 35px;
   background-color: white;
@@ -229,12 +240,11 @@ img {
   box-shadow: 15px 15px 40px rgba(255, 255, 255, 30%);
 }
 
-
 .property-title {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   position: relative;
   text-transform: uppercase;
-  color: #DA1212;
+  color: #da1212;
   text-align: center;
   margin-bottom: 20px;
   font-size: 25px;
@@ -242,7 +252,7 @@ img {
 }
 
 .property-title::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100px;
   height: 4px;
@@ -261,7 +271,6 @@ img {
   color: #1c2448;
 }
 
-
 .property-description {
   display: -webkit-box;
   -webkit-line-clamp: 9;
@@ -277,17 +286,16 @@ img {
   }
 }
 
-
 @media screen and (max-width: 1023.98px) {
   .inform-header {
     margin-bottom: 100px;
   }
-   .inform-day {
-     justify-content: space-between;
-     margin-bottom: 50px;
-   }
+  .inform-day {
+    justify-content: space-between;
+    margin-bottom: 50px;
+  }
   .property-item {
-  width: calc(100% / 3 - 15px);
+    width: calc(100% / 3 - 15px);
   }
   .inform-close {
     font-size: 25px;
@@ -306,36 +314,31 @@ img {
   .day-title {
     font-size: 1.75em;
   }
-  
+
   .property-item {
-     width: 100%;
-   }
+    width: 100%;
+  }
 }
 
-
-
-
-
-
-.main{
-  height:100vh;
-  display:flex;
+.main {
+  height: 100vh;
+  display: flex;
   align-items: center;
 }
- 
-.page{
+
+.page {
   position: fixed;
-  right:20px;
-  top:50%;
+  right: 20px;
+  top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   z-index: 100;
 }
-.dot{
-  width:15px;
+.dot {
+  width: 15px;
   aspect-ratio: 1/1;
-  background: rgba(255, 255, 255,.4);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
   margin-bottom: 10px;
   z-index: 10;
@@ -345,11 +348,11 @@ img {
   background: rgba(255, 255, 255, 1);
 }
 
-.loader{
-  width:100%;
+.loader {
+  width: 100%;
   height: 100%;
   background: white;
-  position:absolute;
+  position: absolute;
 }
 
 lottie-player react {
@@ -359,9 +362,10 @@ lottie-player react {
 .astro-list .swiper-button-prev,
 .astro-list .swiper-button-next {
   transform: translateY(-50%);
-  margin-top: calc(0px - (var(--swiper-navigation-size))/1.1);
+  margin-top: calc(0px - (var(--swiper-navigation-size)) / 1.1);
 }
 
+/* skeleton animation */
 .skeleton {
   animation: skeleton-loading 1s linear infinite alternate;
 }
@@ -388,5 +392,22 @@ lottie-player react {
   margin-bottom: 20px;
 }
 
+/* scrollbar */
+body::-webkit-scrollbar,
+.astro-inform::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 100rem;
+}
 
 
+body::-webkit-scrollbar-thumb,
+.astro-inform::-webkit-scrollbar-thumb {
+  background-color: #b8b6b6;
+  border-radius: 100rem;
+}
+
+body::-webkit-scrollbar-track,
+.astro-inform::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 100rem;
+}

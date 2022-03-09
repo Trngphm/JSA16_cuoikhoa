@@ -92,7 +92,6 @@ let isDrag = false;
 let pos, pos_m;
 const body = select("body");
 
-
 const openModal = () => {
   astroInform.style.top = 0;
   body.style.overflow = "hidden";
@@ -131,16 +130,15 @@ function renderProperty(data) {
 
 // * skeleton loading
 function skeletonLoading() {
-  propertyList.innerHTML = ""
-  for (let i = 0; i< 5; i++) {
-    propertyList.innerHTML += 
-  `
+  propertyList.innerHTML = "";
+  for (let i = 0; i < 5; i++) {
+    propertyList.innerHTML += `
     <div class="property-item swiper-slide">
       <h3 class="skeleton-text skeleton" data-title></h3>
       <p class="property-text skeleton-text skeleton" data-body></p>
       <p class="property-text skeleton-text skeleton" data-body></p>
     </div>
-  `
+  `;
   }
 }
 
@@ -173,22 +171,24 @@ astroList.forEach((astroItem) => {
     let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
     renderPage2(img, informName, informDay);
     if (loader.style.display == "none") {
-      skeletonLoading()
+      skeletonLoading();
     }
     api(url);
     // day
     const dayTitle = selectAll(".day-title");
-    dayActive.classList.remove("active")
-    dayTitle[1].classList.add("active")
+    dayActive.classList.remove("active");
+    dayTitle[1].classList.add("active");
     dayTitle.forEach((item) => {
       item.onclick = () => {
         dayActive = select(".active");
-        dayActive.classList.remove("active");
-        item.classList.add("active");
-        day = item.innerText;
-        let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
-        skeletonLoading()
-        api(url);
+        if (dayActive != item) {
+          dayActive.classList.remove("active");
+          item.classList.add("active");
+          day = item.innerText;
+          let url = baseURL + "?" + `sign=${informName}` + "&" + `day=${day}`;
+          skeletonLoading();
+          api(url);
+        }
       };
     });
     openModal();
@@ -213,6 +213,7 @@ const handleMove = (e) => {
   if (newPos >= closePos) {
     astroInform.style.transition = "0.8s top";
     astroInform.style.top = "100%";
+    body.style.overflow = "auto";
     isDrag = false;
     return;
   }

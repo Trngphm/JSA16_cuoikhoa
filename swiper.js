@@ -30,9 +30,9 @@ function runSwipe() {
   const propertyListSwiper= new Swiper('.property-list',{
     direction: 'horizontal',
     slidesPerView:'auto',
-    // autoplay: {
-    //   delay: 1500,
-    // },
+    autoplay: {
+      delay: 1500,
+    },
     centeredSlides:true,
     centeredSlidesBounds:true,
     navigation: {
