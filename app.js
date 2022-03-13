@@ -67,6 +67,7 @@ const select = (selector) => document.querySelector(selector);
 const selectAll = (selector) => document.querySelectorAll(selector);
 const loader = select("lottie-player");
 
+
 // render
 function renderList() {
   let list = select(".astro-list .swiper-wrapper");
@@ -240,20 +241,38 @@ astroInform.onpointerup = handleUp;
 // ------------------
 
 // destination of page
-const dot = selectAll(".dot");
-
-function scrollFunction() {
-  if (
-    document.body.scrollTop > innerHeight - 500 ||
-    document.documentElement.scrollTop > innerHeight - 500
-  ) {
-    dot[0].style.background = "rgba(255, 255, 255, .4)";
-    dot[1].style.background = "rgba(255, 255, 255, 1)";
+const dots = selectAll(".dot");
+let page = 0
+let oldScroll = 0
+let isScroll
+function getPosition() {
+  isScroll = document.documentElement.scrollTop
+  if (isScroll < oldScroll) {
+    // scroll di len
+    if (isScroll < innerHeight * page - 200) {
+      page -= 1
+      dots.forEach(dot => {
+        dot.style.background = `rgba(255, 255, 255, 0.4)`
+      })
+      dots[page].style.background = `rgba(255, 255, 255, 1)`
+    }
   } else {
-    dot[1].style.background = "rgba(255, 255, 255, .4)";
-    dot[0].style.background = "rgba(255, 255, 255, 1)";
+    if (isScroll != 0) {
+      // scroll di xuong
+      if (isScroll > innerHeight * page) {
+        page +=1
+        dots.forEach(dot => {
+          dot.style.background = `rgba(255, 255, 255, 0.4)`
+        })
+        dots[page].style.background = `rgba(255, 255, 255, 1)`
+      }
+    }
   }
+  oldScroll = isScroll
 }
-window.onscroll = scrollFunction;
 
-// new WOW().init();
+window.onscroll = getPosition
+getPosition()
+
+
+
